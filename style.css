@@ -202,7 +202,7 @@ form div{
     margin-top: 5%;
     display: none;
 }
-
+/** Agenda */
 #Agenda {
     color: var(--cor0);
     border-radius: 5px;
@@ -211,6 +211,17 @@ form div{
     display: none;
 }
 
+#cancelar {
+    display: none;
+    margin-top: 5%;
+    margin-left: 1.5%;
+    background-color: var(--cor1);
+    color: var(--cor4);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
 
 
 

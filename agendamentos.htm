@@ -55,6 +55,7 @@
                 <h3>Consultar Agendamentos</h3>
                 <div><button id="viewButton" type="button">Consultar</button></div>
                 <p id="Agenda"></p>
+                <button id="cancelar" type="button">Cancelar Agendamento</button>
             </aside>
 
         </main>
@@ -100,7 +101,8 @@
     // Captura o valor do input
     const inputValue = nome.value
     // Exibe o valor capturado
-    output.style.display = "block" // Exibe o elemento de saida
+    output.style.display = "block"
+     // Exibe o elemento de saida
     if (nome.value == "") {
         output.textContent = "Preencha o campo nome"
         output.style.backgroundColor = "#ffdb57"
@@ -116,7 +118,7 @@
     } else if (horario.value == "") {
         output.textContent = "Preencha o campo horário"
         output.style.backgroundColor = "#ffdb57"
-    } else {
+    }else {
     output.textContent = `Parabéns ${inputValue}, seu agendamento foi realizado com sucesso para o dia ${data.value} às ${horario.value}`
     output.style.backgroundColor = "#1f628c"
     output.style.color = "#f8f9fa"
@@ -133,6 +135,7 @@
                 Agenda.style.backgroundColor = "#1f628c"
                 Agenda.style.color = "#f8f9fa"
                 Agenda.textContent = `Agendamento para: ${inputValue}`
+                cancelar.style.display = "block"
             } else {
                 Agenda.style.backgroundColor = "#ffdb57"
                 Agenda.style.color = "#1f628c"
@@ -140,6 +143,14 @@
                 
             }
         })
+
+    cancelar.addEventListener('click', () => {
+        const inputValue = getCookie('userInput')
+        const biscoito = ""
+        setCookie('userInput', biscoito, 0)
+        Agenda.style.display = "none"
+        cancelar.style.display = "none"
+    })
 </script>
 
 </html>
