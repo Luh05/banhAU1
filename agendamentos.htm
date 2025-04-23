@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>BanhAU</title>
+</head>
+<body>
+    <header>
+        <img src="media/20.png" alt="Logo banhAU">
+        <h1>BanhAU
+        </h1>
+    </header>
+        <nav>
+            <a href="index.htm">Artigos</a>
+            <a href="loja.htm">Loja</a>
+            <a href="#">Agendamentos</a>
+            <a href="contatos.htm">Contato</a>
+        </nav>
+    
+        <main>
+            <h2><img src="3.png" alt="Patinha"> Agendamentos</h2>
+            <p>Para agendar um banho basta preencher o formulario <strong>Agende um banho</strong>, mas se quiser consultar um agendamento clique em <strong>Consultar Agendamanetos</strong></p>
+            <aside>
+                <h3>Agende um banho</h3>
+                <form>
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" id="nome">
+                    </div>
+                    <div>
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" name="telefone" id="telefone">
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div>
+                        <label for="data">Data:</label>
+                        <input type="date" name="data" id="data">
+                    </div>
+                    <div>
+                        <label for="horario">Horário:</label>
+                        <input type="time" name="horario" id="horario">
+                    </div>
+                    <div><button id="agendar" type="button">Agendar</button></div>
+                    <p id="output"></p>
+                   
+                </form>
+            </aside>
+            <aside>
+                <h3>Consultar Agendamentos</h3>
+                <div><button id="viewButton" type="button">Consultar</button></div>
+                <p id="Agenda"></p>
+            </aside>
+
+        </main>
+        <footer>
+            <p>Site desenvolvido por Luana</p>
+        </footer>
+
+        
+
+</body>
+<script>
+    // Função para salvar cookies
+    function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+     // Função para ler cookies
+     function getCookie(name) {
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const cookies = decodedCookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i].trim();
+                if (cookie.indexOf(name + "=") === 0) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return "";
+        }
+    
+    const nome = document.getElementById("nome")
+    const button = document.getElementById('agendar')
+    const data = document.getElementById("data")
+    const horario = document.getElementById("horario")
+    const output = document.getElementById('output')
+    
+    
+    
+     // Adiciona um evento de clique ao botão
+    button.addEventListener('click', () => {
+    // Captura o valor do input
+    const inputValue = nome.value
+    // Exibe o valor capturado
+    output.style.display = "block" // Exibe o elemento de saida
+    if (nome.value == "") {
+        output.textContent = "Preencha o campo nome"
+        output.style.backgroundColor = "#ffdb57"
+    } else if (telefone.value == "") {
+        output.textContent = "Preencha o campo telefone"
+        output.style.backgroundColor = "#ffdb57"}
+        else if (email.value == "") {
+        output.textContent = "Preencha o campo e-mail"
+        output.style.backgroundColor = "#ffdb57"}
+        else if (data.value == "") {
+        output.textContent = "Preencha o campo data"
+        output.style.backgroundColor = "#ffdb57"
+    } else if (horario.value == "") {
+        output.textContent = "Preencha o campo horário"
+        output.style.backgroundColor = "#ffdb57"
+    } else {
+    output.textContent = `Parabéns ${inputValue}, seu agendamento foi realizado com sucesso para o dia ${data.value} às ${horario.value}`
+    output.style.backgroundColor = "#1f628c"
+    output.style.color = "#f8f9fa"
+    const biscoito = `${inputValue}, para o dia ${data.value}, às ${horario.value}` 
+    setCookie('userInput', biscoito, 90);
+}
+    })
+
+    viewButton.addEventListener('click', () => {
+
+            const inputValue = getCookie('userInput')
+            Agenda.style.display = "block"
+            if (inputValue) {
+                Agenda.style.backgroundColor = "#1f628c"
+                Agenda.textContent = `Agendamento para: ${inputValue}`
+            } else {
+                Agenda.style.backgroundColor = "#ffdb57"
+                Agenda.style.color = "#1f628c"
+                Agenda.textContent = "Nenhum agendamento encontrado."
+                
+            }
+        })
+</script>
+
+</html>

@@ -172,7 +172,7 @@ form div{
     display:table-row;
     
 }
-#agendar {
+#agendar{
     margin-top: 10%;
     margin-left: 10%;
     background-color: var(--cor4);
@@ -183,6 +183,34 @@ form div{
     font-size: 1.2em;
     cursor: pointer;
 }
+
+#viewButton {
+    margin-left: 40%;
+    background-color: var(--cor4);
+    color: var(--cor0);
+    border: 10px solid var(--cor4);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#output {
+    color: var(--cor4);
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 5%;
+    display: none;
+}
+
+#Agenda {
+    color: var(--cor0);
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 5%;
+    display: none;
+}
+
 
 
 
