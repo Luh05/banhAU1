@@ -535,6 +535,10 @@ form div{
         font-size: 18px;
     }
 
+    #viewButton {
+        margin-left: 35%;
+    }
+
     #Agenda {
         font-size: 18px;
     }

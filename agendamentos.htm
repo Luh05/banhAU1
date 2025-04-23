@@ -22,7 +22,7 @@
     
         <main>
             <h2><img src="3.png" alt="Patinha"> Agendamentos</h2>
-            <p>Para agendar um banho basta preencher o formulario <strong>Agende um banho</strong>, mas se quiser consultar um agendamento clique em <strong>Consultar Agendamanetos.</strong></p>
+            <p>Para agendar um banho basta preencher o formulario <strong>Agende um banho</strong>, mas se quiser consultar um agendamento clique em <strong>Consultar Agendamentos.</strong></p>
             <aside>
                 <h3>Agende um banho</h3>
                 <form>
@@ -46,6 +46,8 @@
                         <label for="horario">Horário:</label>
                         <input type="time" name="horario" id="horario">
                     </div>
+                    <div><label for="pet">Pet:</label>
+                        <input type="text" name="pet" id="pet"></div>
                     <div><button id="agendar" type="button">Agendar</button></div>
                     <p id="output"></p>
                    
@@ -93,6 +95,7 @@
     const data = document.getElementById("data")
     const horario = document.getElementById("horario")
     const output = document.getElementById('output')
+    const pet = document.getElementById("pet")
     
     
     
@@ -100,6 +103,7 @@
     button.addEventListener('click', () => {
     // Captura o valor do input
     const inputValue = nome.value
+    const Pet = pet.value
     // Exibe o valor capturado
     output.style.display = "block"
      // Exibe o elemento de saida
@@ -118,11 +122,14 @@
     } else if (horario.value == "") {
         output.textContent = "Preencha o campo horário"
         output.style.backgroundColor = "#ffdb57"
+    }else if (pet.value == "") {
+        output.textContent = "Preencha o campo Pet"
+        output.style.backgroundColor = "#ffdb57"
     }else {
-    output.textContent = `Parabéns ${inputValue}, seu agendamento foi realizado com sucesso para o dia ${data.value} às ${horario.value}`
+    output.textContent = `Parabéns ${inputValue}, o agendamento para o banho no(a) ${Pet} foi realizado com sucesso para o dia ${data.value} às ${horario.value}`
     output.style.backgroundColor = "#1f628c"
     output.style.color = "#f8f9fa"
-    const biscoito = `${inputValue}, para o dia ${data.value}, às ${horario.value}` 
+    const biscoito = `${inputValue} - A um agendamento para ${Pet} no dia ${data.value}, às ${horario.value}` 
     setCookie('userInput', biscoito, 90);
 }
     })
@@ -134,7 +141,7 @@
             if (inputValue) {
                 Agenda.style.backgroundColor = "#1f628c"
                 Agenda.style.color = "#f8f9fa"
-                Agenda.textContent = `Agendamento para: ${inputValue}`
+                Agenda.textContent = `${inputValue}`
                 cancelar.style.display = "block"
             } else {
                 Agenda.style.backgroundColor = "#ffdb57"
