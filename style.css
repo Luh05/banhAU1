@@ -531,6 +531,14 @@ form div{
         font-size: 0.8em;
     }
 
+    #output {
+        font-size: 18px;
+    }
+
+    #Agenda {
+        font-size: 18px;
+    }
+
 
     footer {
         position: static;
