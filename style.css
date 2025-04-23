@@ -202,7 +202,7 @@ form div{
     margin-top: 5%;
     display: none;
 }
-/** Agenda */
+/* Agenda */
 #Agenda {
     color: var(--cor0);
     border-radius: 5px;
@@ -218,6 +218,7 @@ form div{
     background-color: var(--cor1);
     color: var(--cor4);
     border-radius: 5px;
+    border: 10px solid var(--cor1);
     padding: 5px;
     font-size: 1.2em;
     cursor: pointer;
