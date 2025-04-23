@@ -184,23 +184,7 @@
     setCookie('userInput', biscoito, 90);
 }
     })
-    // Consulta um Agendamento
-    viewButton.addEventListener('click', () => {
-
-            const inputValue = getCookie('userInput')
-            Agenda.style.display = "block"
-            if (inputValue) {
-                Agenda.style.backgroundColor = "#1f628c"
-                Agenda.style.color = "#f8f9fa"
-                Agenda.textContent = `${inputValue}`
-                cancelar.style.display = "block"
-            } else {
-                Agenda.style.backgroundColor = "#ffdb57"
-                Agenda.style.color = "#1f628c"
-                Agenda.textContent = "Nenhum agendamento encontrado"
-                
-            }
-        })
+    
     
 
 </script>
