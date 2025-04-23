@@ -434,6 +434,23 @@ form div{
         padding: 10px;
         font-size: 1em;
     }
+
+    #output {
+        font-size: 18px;
+    }
+
+    #viewButton {
+        margin-left: 2.5%;
+    }
+
+    #Agenda {
+        font-size: 18px;
+    }
+
+    #cancelar {
+        margin-left: 2.5%;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
