@@ -22,7 +22,7 @@
     
         <main>
             <h2><img src="3.png" alt="Patinha"> Agendamentos</h2>
-            <p>Para agendar um banho basta preencher o formulario <strong>Agende um banho</strong>, mas se quiser consultar um agendamento clique em <strong>Consultar Agendamanetos</strong></p>
+            <p>Para agendar um banho basta preencher o formulario <strong>Agende um banho</strong>, mas se quiser consultar um agendamento clique em <strong>Consultar Agendamanetos.</strong></p>
             <aside>
                 <h3>Agende um banho</h3>
                 <form>
@@ -131,6 +131,7 @@
             Agenda.style.display = "block"
             if (inputValue) {
                 Agenda.style.backgroundColor = "#1f628c"
+                Agenda.style.color = "#f8f9fa"
                 Agenda.textContent = `Agendamento para: ${inputValue}`
             } else {
                 Agenda.style.backgroundColor = "#ffdb57"
